@@ -35,7 +35,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env: 
             - name: TOKEN
-              value: {{ .Values.fiberplane.token | default ""}}
+              valueFrom:
+                secretKeyRef:
+                  name: token
+                  key: token
+                  optional: false
             - name: DATA_SOURCES_PATH
               value: {{ .Values.fiberplane.data_sources_path | default "/app/config/data_sources.yaml" }}
             - name: RUST_LOG
