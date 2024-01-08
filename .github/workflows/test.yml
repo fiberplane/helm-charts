@@ -13,4 +13,3 @@ jobs:
         uses: helm/chart-testing-action@main
         with:
           command: lint
-          config: .github/ct.yaml
