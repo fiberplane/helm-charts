@@ -3,7 +3,7 @@ fullnameOverride: ""
 
 image:
   repository: fiberplane/fpd
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: ""
 
 fiberplane:
