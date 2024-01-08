@@ -23,14 +23,8 @@ podSecurityContext: {}
 
 securityContext: {}
 
-service:
-  type: ClusterIP
-  port: 80
-
-ingress:
-  enabled: false
-
 resources: {}
+
 replicaCount: 1
 autoscaling:
   enabled: false
