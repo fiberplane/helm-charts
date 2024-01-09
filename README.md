@@ -1,5 +1,4 @@
 # Fiberplane's helm chart repository
-Things will be added here..
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -12,11 +11,11 @@ Things will be added here..
 
 Once Helm is set up properly, add the repo as follows:
 
-```console
+```bash
 helm repo add fiberplane https://fiberplane.github.io/helm-charts
 ```
 
-You can then run `helm search repo fiberplane` to see the charts.
+You can then run `helm search repo fiberplane` to see the available charts.
 
 ## License
 
