@@ -3,6 +3,23 @@ entries:
   fiberplane-daemon:
   - apiVersion: v2
     appVersion: v2
+    created: "2024-01-09T16:46:59.976925852Z"
+    description: A Fiberplane Daemon Helm chart for Kubernetes
+    digest: 9346bc8a6e4ea10452101aea2e607bf9d1be1064d47f5adc5ef44db858816d9a
+    home: https://fiberplane.com
+    keywords:
+    - monitoring
+    - runbooks
+    - metrics
+    name: fiberplane-daemon
+    sources:
+    - https://github.com/fiberplane/fpd
+    type: application
+    urls:
+    - https://github.com/fiberplane/helm-charts/releases/download/fiberplane-daemon-0.1.1/fiberplane-daemon-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v2
     created: "2024-01-09T12:48:41.337746749Z"
     description: A Fiberplane Daemon Helm chart for Kubernetes
     digest: 6fc0c761bd26ffae7e1cd98c2ed9c90f997fc418694da5053bf3e7a5424c96dd
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://github.com/fiberplane/helm-charts/releases/download/fiberplane-daemon-0.1.0/fiberplane-daemon-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-09T12:48:41.337756187Z"
+generated: "2024-01-09T16:46:59.976938225Z"
