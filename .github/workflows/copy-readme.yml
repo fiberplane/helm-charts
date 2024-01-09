@@ -1,0 +1,26 @@
+name: Copy README to gh-pages
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "README.md"
+jobs:
+  copy:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cp -f README.md ${{ runner.temp }}/README.md
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - run: |
+          cp -f ${{ runner.temp }}/README.md .
+          git config user.name "FiberBot"
+          git config user.email "fiberbot@users.noreply.github.com"
+          git add README.md
+          git commit --signoff -m "copy README from main"
+          git push
