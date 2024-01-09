@@ -55,18 +55,6 @@ spec:
               protocol: TCP
           {{- end }}
           #TODO: add liveness and readiness probes
-          {{- if .Values.livenessProbe }}
-          livenessProbe: 
-            httpGet:
-              path: /
-              port: http
-          {{- end }}
-          {{- if .Values.readinessProbe }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          {{- end }}
           {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
