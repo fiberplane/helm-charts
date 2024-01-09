@@ -8,8 +8,8 @@ image:
   tag: ""
 
 fiberplane:
-  token: ""
-  data-sources: []
+  fpd_token: ""
+  data_sources: []
 
 imagePullSecrets: []
 
