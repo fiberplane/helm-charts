@@ -1,5 +1,10 @@
 {{- if .Values.fiberplane.fpd_token }}
-API Token registered, Fiberplane Daemon is spinning up in your cluster.
+Fiberplane Daemon token registered - is spinning up in your cluster.
+
+Verify succesful connection in the Fiberplane Studio or using the CLI:
+
+		fp daemons list
+
 {{- else }}
 ##############################################################################
 ####         ERROR: You did not set a fiberplane.fpd_token value          ####
