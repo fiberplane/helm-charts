@@ -2,7 +2,7 @@
 API Token registered, Fiberplane Daemon is spinning up in your cluster.
 {{- else }}
 ##############################################################################
-####               ERROR: You did not set a fiberplane.fpd_token  value       ####
+####         ERROR: You did not set a fiberplane.fpd_token value          ####
 ##############################################################################
 
 This deployment will fail unless you get your API key from Fiberplane.

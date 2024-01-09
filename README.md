@@ -21,4 +21,5 @@ You can then run `helm search repo fiberplane` to see the charts.
 ## License
 
 <!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
-[MIT/Apache 2.0 License](https://github.com/fiberplane/helm-charts/blob/main/LICENSE).
+[MIT](https://github.com/fiberplane/helm-charts/blob/main/LICENSE-MIT).
+[Apache 2.0 License](https://github.com/fiberplane/helm-charts/blob/main/LICENSE-APACHE)
