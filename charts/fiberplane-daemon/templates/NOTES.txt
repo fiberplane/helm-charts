@@ -1,0 +1,24 @@
+{{- if .Values.fiberplane.fpd_token }}
+API Token registered, Fiberplane Daemon is spinning up in your cluster.
+{{- else }}
+##############################################################################
+####         ERROR: You did not set a fiberplane.fpd_token value          ####
+##############################################################################
+
+This deployment will fail unless you get your API key from Fiberplane.
+You can sign up for Fiberplane at https://fiberplane.com
+
+Once registered you can request an API key at:
+
+    https://studio.fiberplane.com/workspaces/<your_workspace_id>/settings/fpd
+
+or if you have the Fiberplane CLI installed:
+
+    fp daemon create
+
+Then run:
+
+    helm upgrade {{ .Release.Name }} \
+        --set fiberplane.token=YOUR_TOKEN
+{{- end }}
+

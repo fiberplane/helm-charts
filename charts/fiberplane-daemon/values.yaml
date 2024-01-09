@@ -1,0 +1,42 @@
+nameOverride: ""
+
+fullnameOverride: ""
+
+image:
+  repository: fiberplane/fpd
+  pullPolicy: Always
+  tag: ""
+
+fiberplane:
+  fpd_token: ""
+  data_sources: []
+
+imagePullSecrets: []
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+resources: {}
+
+replicaCount: 1
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

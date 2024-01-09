@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fiberplane-daemon.fullname" . }}
+  labels:
+    {{- include "fiberplane-daemon.labels" . | nindent 4 }}
+data:
+  data_sources.yaml: |
+    {{ .Values.fiberplane.data_sources | toYaml | nindent 4 }}

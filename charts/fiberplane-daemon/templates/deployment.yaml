@@ -33,20 +33,39 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env: 
+            - name: TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "fiberplane-daemon.fullname" . }}
+                  key: fpd_token
+                  optional: false
+            - name: DATA_SOURCES_PATH
+              value: {{ .Values.fiberplane.data_sources_path | default "/app/config/data_sources.yaml" }}
+            - name: RUST_LOG
+              value: {{ .Values.fiberplane.log_level | default "proxy=info" }}
+          volumeMounts:
+            - name: data-sources
+              mountPath: {{ .Values.fiberplane.data_sources_path | default "/app/config/data_sources.yaml" }}
+              subPath: data_sources.yaml
+          {{- if .Values.ports }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          {{- end }}
+          #TODO: add liveness and readiness probes
+          {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: data-sources
+          configMap:
+            name: {{ include "fiberplane-daemon.fullname" . }}
+            items:
+              - key: data_sources.yaml
+                path: data_sources.yaml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
