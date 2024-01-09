@@ -1,8 +1,9 @@
 name: Lint and test Helm charts
+
 on:
   pull_request:
-    paths:
-      - "charts/**"
+    branches: ["*"]
+
 jobs:
   lint:
     runs-on: ubuntu-latest
